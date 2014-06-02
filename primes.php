@@ -2,6 +2,10 @@
 include 'PrimesClass.php';
 
 $primes = new PrimesClass();
-$result = $primes->test();
+
+$startingPoint = $_POST['startingPoint'];
+$quantity = $_POST['quantity'];
+
+$result = $primes->getPrimeArray($startingPoint,$quantity);
 
 echo json_encode($result);
