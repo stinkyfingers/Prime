@@ -26,9 +26,9 @@
         var getPrimes = function(){
 
             $.post("primes.php",function(response){
-                console.log(response);
-                alert(response);
-                $("#output").html(response);
+                console.log(response.test);
+                //alert(response);
+                $("#output").html(response.test);
                 },'json');
 
          }; 
