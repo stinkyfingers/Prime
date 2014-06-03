@@ -11,8 +11,17 @@
             <h3>Prime Numbers</h3>
             <button id="primeNumbers">Get Prime Numbers</button>
 
-            <div id="output">Output: </div>
-
+            
+            
+            <button id="extraCredit">Extra Credit</button>
+            <div id="extraFields">
+                <label for="startingPoint">Starting Number</label>
+                <input type="text" id="startingPoint" value="2"><br>
+                <label for="quantity">Number of Primes</label>
+                <input type="text" id="quantity" value="1000">
+            </div>
+            
+            <br><div id="output">Output: </div>
         </section>
 
     </body>
@@ -20,13 +29,14 @@
 
     <script>
         $("#primeNumbers").click(function(){
+            $("#output").empty();
             getPrimes();
         });
         
         var getPrimes = function(){
             data = {
-                startingPoint: '2',
-                quantity: '1000'
+                startingPoint: $("#startingPoint").val(),
+                quantity: $("#quantity").val()
             }
             $.post("primes.php",data,function(response){
                 $("#output").append("<table id='primeTable'><tr><th>Index</th><th>Value</th></tr></table>");
@@ -38,6 +48,11 @@
                 },'json');
 
          }; 
-
+         
+         $("#extraCredit").click(function(){
+            $("#extraFields").show();
+           ;
+         });
+         
     </script>
 </html>

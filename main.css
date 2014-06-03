@@ -4,3 +4,6 @@
 th, td{
     border: 1px solid #333;
 }
+#extraFields{
+    display:none;
+}
